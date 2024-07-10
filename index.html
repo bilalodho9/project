@@ -1164,32 +1164,52 @@ select {
       <h2>Contact</h2>
       <p>Located your appointment. Feel free to give us feedback and help us improve our digital med care.</p>
   </div>
-  <div class="container">
-      <!--Google map-->
-      <div class="mapouter">
-          <div class="gmap_canvas">
-              <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.8055368048804!2d77.22981385036265!3d28.6655407892513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0683919c3b%3A0xf5fc331b74c2b9e2!2sIndira%20Gandhi%20Delhi%20Technical%20University%20for%20Women!5e0!3m2!1sen!2sin!4v1679424592719!5m2!1sen!2sin"></iframe>
-              <a href="https://www.fnfgo.com/">FNF Mods</a>
+
+  <div class="container" id="linkmap">
+    <!--Google map-->
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.8055368048804!2d77.22981385036265!3d28.6655407892513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0683919c3b%3A0xf5fc331b74c2b9e2!2sIndira%20Gandhi%20Delhi%20Technical%20University%20for%20Women!5e0!3m2!1sen!2sin!4v1679424592719!5m2!1sen!2sin"></iframe>
+        <a href="https://www.fnfgo.com/">FNF Mods</a>
+      </div>
+      <style>
+        .mapouter {
+          position: relative;
+          text-align: right;
+          width: 100%;
+          height: 363px;
+        }
+        .gmap_canvas {
+          overflow: hidden;
+          background: none !important;
+          width: 100%;
+          height: 363px;
+        }
+        .gmap_iframe {
+          height: 363px !important;
+        }
+      </style>
+    </div><br>
+    <div class="row mt-2" style="display: flex; flex-direction: row; align-items: stretch; justify-content: space-around;">
+      <div class="col-lg-4">
+        <div class="info">
+          <div class="address">
+            <i class="fa fa-location-dot"></i>
+            <h4>Location:</h4>
+            <p><a href="https://www.google.com/maps/search/?api=1&query=IGDTUW,Delhi" target="_blank">IGDTUW, Delhi</a></p>
           </div>
-          <style>
-              .mapouter {
-                  position: relative;
-                  text-align: right;
-                  width: 100%;
-                  height: 363px;
-              }
+          <div class="email">
+            <i class="fa fa-envelope"></i>
+            <h4>Email:</h4>
+            <p><a href="mailto:rapidoc@mail.com">rapidoc@mail.com</a></p>
+          </div>
+          <div class="phone">
+            <i class="fa fa-phone"></i>
+            <h4>Call:</h4>
+            <p><a href="tel:+91 1234567890">+91 1234567890</a></p>
+          </div>
+        </div>
 
-              .gmap_canvas {
-                  overflow: hidden;
-                  background: none !important;
-                  width: 100%;
-                  height: 363px;
-              }
-
-              .gmap_iframe {
-                  height: 363px !important;
-              }
-          </style>
       </div>
       <br>
       <div class="row mt-2" style="display: flex; flex-direction: row; align-items: stretch; justify-content: space-around;">
@@ -1558,49 +1578,56 @@ select {
   <br><br><br><br><br><br>
   <footer>
     <div class="footer-wrapper">
-      <div class="footer-columns">
-        <div class="other-columns">
-          <section>
-            <h4>Quick Links</h4><br>
-            <ul class="links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="index.html#contact">Contact Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#doctors">Doctors</a></li>
-              <li><a href="./faq.html">FAQ</a></li>
-            </ul>
-          </section>
-          <section>
-            <h4>Explore</h4><br>
-            <ul class="links">
-              <li><a href="Html-Files/appointment.html">Appointment</a></li>
-              <li><a href="index.html#patient-portal">Patient Portal</a></li>
-              <li><a href="login.html">Login account</a></li>
-              <li><a href="#">Helplines</a></li>
-              <li><a href="index.html#contact">Location</a></li>
-            </ul>
-          </section>
-          <section>
-            <h4>Legal</h4><br>
-            <ul class="links">
-              <li><a href="Html-Files/customer_agreement.html">Customer Agreement</a></li>
-              <li><a href="Html-Files/privacy_policy_page.html">Privacy Policy</a></li>
-              <li><a href="Html-Files/terms_and_conditions.html">Terms and Conditions</a></li>
-              <li><a href="#">GDPR</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Testimonials</a></li>
-            </ul>
-          </section>
-          
-       <section class="footer-col" >
-      <div>
-      <h4>RAPIDOC Newsletter</h4><br>
-      <p>
-        Subscribe to our newsletter for a weekly dose
-        of news, updates, helpful tips, and
-        exclusive offers.
-      </p>
+
+        <div class="footer-columns">
+            <div class="other-columns">
+                <section>
+                    <h4>Quick Links</h4><br>
+                      <ul class="links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="./Html-Files/contact.html">Contact Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="./faq.html">FAQ</a></li>
+                    </ul>
+                </section>
+                <section>
+                  <h4>Explore</h4><br>
+                  <ul class="links">
+                    <li><a href="#appointment">Appointment</a></li>
+                    <li><a href="#patient-portal">Patient Portal</a></li>
+                    <li><a href="login.html">Login account</a></li>
+                    <li><a href="#">Helplines</a></li>
+                    <li><a href="#linkmap">Location</a></li>
+                  </ul>
+                </section>
+                <section>
+                  <h4>Legal</h4><br>
+                  <ul class="links">
+                    <li><a href="Html-Files/customer_agreement.html">Customer Agreement</a></li>
+                    <li><a href="Html-Files/privacy_policy_page.html">Privacy Policy</a></li>
+                    <li><a href="Html-Files/terms_and_conditions.html">Terms and Conditions</a></li>
+                    <li><a href="#">GDPR</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#test">Testimonials</a></li>
+                  </ul>
+                </section>
+                <section class="footer-col">
+                  <h4>RAPIDOC Newsletter</h4><br>
+                  <p>
+                    Subscribe to our newsletter for a weekly dose
+                    of news, updates, helpful tips, and
+                    exclusive offers.
+                  </p>
+                  <form action="#" class="subscribe-form">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">SUBSCRIBE</button>
+                  </form>
+                </section>
+            </div>
+        </div>
+
     </div>
       <form action="#" class="subscribe-form">
         <input type="email" placeholder="Your email" required>
