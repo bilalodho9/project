@@ -87,11 +87,10 @@
         <li><a href="dex.html"><i class="bi bi-gear"></i> Service</a></li>
         <li><a href="#patient-portal"><i class="bi bi-person"></i> Patient Portal</a></li>
         <li><a href="#doctors"><i class="bi bi-person-circle"></i> Doctor</a></li>
-        <li><a href="#contact"><i class="bi bi-telephone"></i> Contact us</a></li>
-        <li><a href="#feedback"><i class="bi bi-star"></i> Rate Us</a></li>
-        <li><a href="log/login.html"><i class="bi bi-box-arrow-right"></i> Sign in/Sign up</a></li>
-        <a href="Html-Files/Doctor Experience.html"><button class="btn1">Find a Doctor</button></a>
-
+        <li><a href="#contact"><i class="bi bi-telephone"></i>Contact us</a></li>
+        <li><a href="#feedback"><i class="bi bi-star"></i>Rate Us</a></li>
+        <li><a href="log/login.html" id="login"><i class="bi bi-box-arrow-right"></i> Sign in/Sign up</a></li>
+        <a href="./Html-Files/Doctor Experience.html"><button>Find a Doctor</button></a>
       </ul>
     </nav>
   </header>
@@ -282,7 +281,62 @@
         </div>
       </div>
     </section>
-    <script src="js/imageswap.js"></script>
+
+    <script>
+
+        window.onload=()=>{
+        const item=localStorage.getItem('username');
+        if(!item) return ;
+
+        const username=JSON.parse(item);
+        const now=new Date();
+
+        if(now.getTime()>username.expiry){
+          localStorage.removeItem('username');
+        }
+        else{
+          document.getElementById("login").innerHTML=username.value;
+          console.log(username);
+        }
+      };
+     
+      document.querySelectorAll('.about-us-community').forEach(function(element) {
+  element.addEventListener('mouseover', function() {
+      element.querySelector('img').src = './images/checkuphover.png';
+  });
+  element.addEventListener('mouseleave', function() {
+      element.querySelector('img').src = './images/checkup.png';
+  });
+});
+
+      document.querySelectorAll('.about-us-event').forEach(function (element) {
+        element.addEventListener('mouseover', function () {
+          element.querySelector('img').src = './images/serviceshover.png';
+        });
+        element.addEventListener('mouseleave', function () {
+          element.querySelector('img').src = './images/services.png';
+        });
+      });
+
+      document.querySelectorAll('.about-us-product').forEach(function (element) {
+        element.addEventListener('mouseover', function () {
+          element.querySelector('img').src = './images/wardhover.png';
+        });
+        element.addEventListener('mouseleave', function () {
+          element.querySelector('img').src = './images/ward.png';
+        });
+      });
+
+      document.querySelectorAll('.about-us-location').forEach(function (element) {
+        element.addEventListener('mouseover', function () {
+          element.querySelector('img').src = './images/appointmenthover.png';
+        });
+        element.addEventListener('mouseleave', function () {
+          element.querySelector('img').src = './images/appointment.png';
+        });
+      });
+    </script>
+
     <!-- End About Section -->
     <!-- ################## Counts Section ################## -->
     <section id="counts" class="counts">

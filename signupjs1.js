@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup ,createUserWithEmailAndPassword,updateProfile} from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyDx_FcoL3XJryt6BInhOaDsMKiSmxzrYBI",
@@ -10,13 +11,17 @@ const firebaseConfig = {
   appId: "1:467011865433:web:e23be9d0cc3496bb961a48"
 };
 
+
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const database=getDatabase();
+const dbRef=ref(database,'data');
 auth.languageCode = 'en';
 
 const provider = new GoogleAuthProvider();
 
-document.getElementById("google1").addEventListener("click", function() {
+document.getElementById("goog").addEventListener("click", function() {
+  console.log('clicked');
   signInWithPopup(auth, provider)
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -28,18 +33,38 @@ document.getElementById("google1").addEventListener("click", function() {
     });
 });
 
-document.getElementById("signup-form").addEventListener("submit", function(event) {
-  event.preventDefault();  // Prevent form from submitting the default way
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+// document.getElementById("registerForm").addEventListener("submit", function(event) {
+//   event.preventDefault();  // Prevent form from submitting the default way
+//   const name = document.getElementById("name").value;
+//   const email = document.getElementById("email").value;
+//   const password = document.getElementById("password").value;
 
-  if (validateForm(name, email, password)) {
-    // Simulate a successful registration (Replace with actual Firebase sign-up logic)
-    console.log("Form submitted with:", { name, email, password });
-    window.location.href = "./signed.html";
-  }
-});
+//   if (validateForm(name, email, password)) {
+//     try {
+//       createUserWithEmailAndPassword(auth,email,password)
+//      .then((credential)=>
+//       {
+//         set(ref(database, 'users/' + credential.user.uid), { // set userdetails in realtime database 
+//         username: name,
+//         email: email,
+//     })
+//     updateProfile(credential.user,{  // update profile for username
+//       displayName:name,
+//     })
+//     window.location.href = "index.html";
+//   });
+    
+//     } catch (error) {
+//       console.log(error);
+//       //alert("error occured!")
+//     }
+     
+//     // Simulate a successful registration (Replace with actual Firebase sign-up logic)
+    
+//     console.log("Form submitted with:", { name, email, password });
+//     //
+//   }
+// });
 
 function validateForm(name, email, password) {
   if (name === "" || email === "" || password === "") {

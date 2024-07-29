@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   const registerButton = document.getElementById("register");
   const loginButton = document.getElementById("login");
