@@ -1,46 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="../favicon.png">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAPIDOC</title>
-  <link rel="stylesheet" href="./forgetpass.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
   <link rel="stylesheet" href="login.css">
-  <!-- Removed duplicate font-awesome import -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="https://www.gstatic.com/firebasejs/9.9.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.9.2/firebase-auth-compat.js"></script>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-  <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+  <script src="scriptsignup.js" defer type="module"></script>
+  <script src="signupjs.js" defer type="module"></script>
+  <script src="signupjs1.js" defer type="module"></script>
   <meta name="google-signin-client_id" content="646664380070-n07i34glgcc6sanb59p3m1k5k0cgn1v1.apps.googleusercontent.com">
-  <style>
-    .social-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px; /* Adjust the gap as needed */
-      margin-top: 10px;
-    }
-
-    .social-icon {
-      cursor: pointer;
-    }
-
-    .social-icon i {
-      font-size: 24px;
-    }
-    </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
 </head>
 <body>
-  <div class="top-left-corner">
-    <a href="../index.html" class="home-button">
-      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 64 64">
-        <path d="M 32 8 C 31.08875 8 30.178047 8.3091875 29.435547 8.9296875 L 8.8007812 26.171875 C 8.0357812 26.810875 7.7634844 27.925203 8.2714844 28.783203 C 8.9184844 29.875203 10.35025 30.088547 11.28125 29.310547 L 12 28.710938 L 12 47 C 12 49.761 14.239 52 17 52 L 47 52 C 49.761 52 52 49.761 52 47 L 52 28.712891 L 52.71875 29.3125 C 53.09275 29.6255 53.546047 29.777344 53.998047 29.777344 C 54.693047 29.777344 55.382672 29.416656 55.763672 28.722656 C 56.228672 27.874656 55.954891 26.803594 55.212891 26.183594 L 52 23.498047 L 52 15 C 52 13.895 51.105 13 50 13 L 48 13 C 46.895 13 46 13.895 46 15 L 46 18.484375 L 34.564453 8.9296875 C 33.821953 8.3091875 32.91125 8 32 8 z M 32 12.152344 C 32.11475 12.152344 32.228766 12.191531 32.322266 12.269531 L 48 25.369141 L 48 46 C 48 47.105 47.105 48 46 48 L 38 48 L 38 34 C 38 32.895 37.105 32 36 32 L 28 32 C 26.895 32 26 32.895 26 34 L 26 48 L 18 48 C 16.895 48 16 47.105 16 46 L 16 25.367188 L 31.677734 12.269531 C 31.771234 12.191531 31.88525 12.152344 32 12.152344 z"></path>
-      </svg>
-    </a>
-  </div>
+    <div class="login-cont">
+  <!-- Navbar -->
+  <!-- <nav class="navbar">
+    <div class="logo">
+        <img src="rd1.png" >
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="bi bi-house-door-fill"></i> Home</a></li>
+      <li><a href="../index.html#about"><i class="bi bi-info-circle-fill"></i> About</a></li>
+      <li><a href="../Html-Files/news.html"><i class="bi bi-newspaper"></i> News</a></li>
+      <li><a href="../dex.html"><i class="bi bi-gear"></i> Service</a></li>
+      <li><a href="../index.html#patient-portal"><i class="bi bi-person"></i> Patient Portal</a></li>
+      <li><a href="../index.html#doctors"><i class="bi bi-person-circle"></i> Doctor</a></li>
+      <li><a href="../Html-Files/contact.html"><i class="bi bi-telephone"></i> Contact us</a></li>
+      <li><a href="../rateus.html"><i class="bi bi-star"></i> Rate Us</a></li>
+      <li><a href=""><i class="bi bi-box-arrow-right"></i> Sign in/Sign up</a></li>
+    </ul>
+    <button class="find-doctor"><a href="../Html-Files/Doctor%20Experience.html">Find a Doctor</a></button>
+  </nav> -->
+
+
+  <header class="header_container nav-h">
+    <div class="img">
+      <img id="rd-logo" style="width: 90px; height: auto;" src="rd1.png">
+    </div>
+    <nav class="nav_menu">
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="mobile-logo-text">RAPIDOC</div>
+      <ul class="nav_link vis-h">
+        <li><a href="../index.html"><i class="bi bi-house-door-fill"></i> Home</a></li>
+        <li><a href="../#about"><i class="bi bi-info-circle-fill"></i> About</a></li>
+        <li><a href="../news.html"><i class="bi bi-newspaper"></i> News</a></li>
+        <li><a href="../dex.html"><i class="bi bi-gear"></i> Service</a></li>
+        <li><a href="../#patient-portal"><i class="bi bi-person"></i> Patient Portal</a></li>
+        <li><a href="../Html-Files/appointment.html"><i class="bi bi-person"></i> Appointment</a></li>
+        <li><a href="../#doctors"><i class="bi bi-person-circle"></i> Doctor</a></li>
+        <li><a href="../#contact"><i class="bi bi-telephone"></i> Contact us</a></li>
+        <li><a href="../#feedback"><i class="bi bi-star"></i> Rate Us</a></li>
+        <li><a href="../log/login.html"><i class="bi bi-box-arrow-right"></i> Sign in/Sign up</a></li>
+        <a href="../Html-Files/Doctor Experience.html"><button class="btn1">Find a Doctor</button></a>
+
+      </ul>
+    </nav>
+  </header> <script>
+    function toggleMenu() {
+  const navLinks = document.querySelector('.nav_link');
+  navLinks.classList.toggle('active');
+}
+
+  </script>
+  <!-- <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="#appointment" class="appointment-btn scrollto">
+        <span class="d-md-inline">EMERGENCY</span>
+      </a>
+    </div>
+  </header> -->
+
+  <!-- Forms Container -->
+ 
   <div class="container" id="container">
     <div class="form-container register-container">
       <form action="#" id="registerForm">
@@ -264,14 +305,118 @@ function handleGitHubSignIn() {
       document.getElementById('container').classList.remove("right-panel-active");
     });
   </script>
+
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-columns">
+        <div class="other-columns">
+          <section>
+            <h4>Quick Links</h4><br>
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="index.html#contact">Contact Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#doctors">Doctors</a></li>
+              <li><a href="./faq.html">FAQ</a></li>
+            </ul>
+          </section>
+          <section>
+            <h4>Explore</h4><br>
+            <ul class="links">
+              <li><a href="Html-Files/appointment.html">Appointment</a></li>
+              <li><a href="portal.html">Patient Portal</a></li>
+              <li><a href="log/login.html">Login account</a></li>
+              <li><a href="#">Helplines</a></li>
+              <li><a href="index.html#contact">Location</a></li>
+            </ul>
+          </section>
+          <section>
+            <h4>Legal</h4><br>
+            <ul class="links">
+              <li><a href="Html-Files/customer_agreement.html">Customer Agreement</a></li>
+              <li><a href="Html-Files/privacy_policy_page.html">Privacy Policy</a></li>
+              <li><a href="Html-Files/terms_and_conditions.html">Terms and Conditions</a></li>
+              <li><a href="#">GDPR</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Testimonials</a></li>
+            </ul>
+          </section>
+       <section class="footer-col" >
+      <div>
+      <h4>RAPIDOC Newsletter</h4><br>
+      <p>
+        Subscribe to our newsletter for a weekly dose
+        of news, updates, helpful tips, and
+        exclusive offers.
+      </p>
+    </div>
+      <form action="#" class="subscribe-form" id="subscribeForm">
+        <input type="email" id="emailInput" placeholder="Your email" required>
+        <button type="submit" id="subscribeButton" class="b">SUBSCRIBE</button>
+      </form>
+         </section>
+          <!-- <div id="subscribeBanner">
+            <p>Thanks for subscribing!</p>
+          </div> -->
+          <script src="../js/footersubcribejs.js"></script>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-wrapper">
+        <small id="ss">© <span id="year"></span><span> RapiDoc</span>&nbsp;| All Rights
+          Reserved Made with ❤️ by RapiDoc</small>
+        <div class="social-wrapper">
+          <div class="social-links">
+            <div style="margin-left: 300px;font-family: sans-serif;"><i>Follow&nbsp;Us&nbsp;:&nbsp;</i></div>
+            <div  id="insta">
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div id="twit">
+            <a  href="https://www.twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div id="git">
+            <a  href="https://github.com/Anishkagupta04/RAPIDOC-HEALTHCARE-WEBSITE-" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div id="linkd">
+            <a  href="https://www.linkedin.com" target="_blank">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
+            <div id="fb"><a  href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></div>
+           <div id="phn"> <a  href="+91 1234567890" title="+91 1234567890" target="_blank"><i class="fa-solid fa-phone"></i></a></div>
+            <div id="mail1" ><a  href="info@rapidoc.com" target="_blank"><i class="fa-solid fa-envelope"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+  
+  <script src="log/script.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const registerButton = document.getElementById("register");
+      const container = document.getElementById("container");
+
+      registerButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default behavior of the anchor tag
+
+        container.classList.add("right-panel-active");
+
+        // Scroll to the top of the form for better visibility
+        document.getElementById("registerForm").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  </script>
 </body>
 </html>
-
-<style>
-  body{
-    background-color: #1e1e1e;
-  }
-  .container{
-    background-color: #143C3D;
-  }
-</style>
